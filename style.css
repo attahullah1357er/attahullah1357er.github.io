@@ -1,646 +1,405 @@
-/* ================================
-   ATTah U Llah BEIGH PORTFOLIO
-   Professional Stylesheet
-================================ */
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: #f8fafc;
-    color: #172033;
-    line-height: 1.7;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-.container {
-    width: min(1120px, 90%);
-    margin: auto;
-}
-
-/* ================================
-   NAVIGATION
-================================ */
-
-.navbar {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    background: rgba(255, 255, 255, 0.96);
-    border-bottom: 1px solid #e5e7eb;
-}
-
-.nav-container {
-    min-height: 72px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.logo {
-    font-size: 25px;
-    font-weight: 800;
-    letter-spacing: -1px;
-}
-
-.logo span {
-    color: #2563eb;
-}
-
-nav {
-    display: flex;
-    gap: 28px;
-}
-
-nav a {
-    font-size: 14px;
-    font-weight: 600;
-    color: #4b5563;
-    transition: 0.3s;
-}
-
-nav a:hover {
-    color: #2563eb;
-}
-
-/* ================================
-   HERO
-================================ */
-
-.hero {
-    min-height: 650px;
-    display: flex;
-    align-items: center;
-    background:
-        radial-gradient(circle at 85% 20%, rgba(37, 99, 235, 0.10), transparent 30%),
-        linear-gradient(135deg, #ffffff, #f1f5f9);
-}
-
-.hero-content {
-    display: grid;
-    grid-template-columns: 1.5fr 1fr;
-    gap: 80px;
-    align-items: center;
-}
-
-.small-heading {
-    color: #2563eb;
-    font-size: 13px;
-    font-weight: 800;
-    letter-spacing: 3px;
-    margin-bottom: 15px;
-}
-
-.hero h1 {
-    font-size: clamp(48px, 7vw, 78px);
-    line-height: 1;
-    letter-spacing: -4px;
-    margin-bottom: 20px;
-}
-
-.hero h1 span {
-    color: #2563eb;
-}
-
-.hero h2 {
-    font-size: 25px;
-    color: #334155;
-    margin-bottom: 20px;
-    font-weight: 600;
-}
-
-.hero-text > p:not(.small-heading) {
-    max-width: 650px;
-    color: #64748b;
-    font-size: 17px;
-}
-
-.hero-buttons {
-    display: flex;
-    gap: 15px;
-    margin-top: 32px;
-    flex-wrap: wrap;
-}
-
-.btn {
-    display: inline-block;
-    padding: 13px 24px;
-    border-radius: 8px;
-    font-weight: 700;
-    font-size: 14px;
-    transition: 0.3s;
-}
-
-.primary-btn {
-    background: #2563eb;
-    color: white;
-}
-
-.primary-btn:hover {
-    background: #1d4ed8;
-    transform: translateY(-2px);
-}
-
-.secondary-btn {
-    border: 1px solid #cbd5e1;
-    background: white;
-    color: #172033;
-}
-
-.secondary-btn:hover {
-    border-color: #2563eb;
-    color: #2563eb;
-}
-
-/* Hero profile card */
-
-.hero-card {
-    background: white;
-    padding: 45px 30px;
-    text-align: center;
-    border-radius: 20px;
-    border: 1px solid #e2e8f0;
-    box-shadow: 0 25px 60px rgba(15, 23, 42, 0.10);
-}
-
-.profile-placeholder {
-    width: 170px;
-    height: 170px;
-    margin: 0 auto 25px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #2563eb, #0f172a);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 48px;
-    font-weight: 800;
-    border: 7px solid #eff6ff;
-}
-
-.hero-card h3 {
-    font-size: 21px;
-    margin-bottom: 8px;
-}
-
-.hero-card p {
-    color: #64748b;
-    font-size: 14px;
-}
-
-/* ================================
-   SECTIONS
-================================ */
-
-.section {
-    padding: 100px 0;
-}
-
-.alternate {
-    background: #eef3f8;
-}
-
-.section-title {
-    margin-bottom: 50px;
-}
-
-.section-title p {
-    color: #2563eb;
-    font-size: 12px;
-    font-weight: 800;
-    letter-spacing: 3px;
-    margin-bottom: 8px;
-}
-
-.section-title h2 {
-    font-size: 38px;
-    line-height: 1.2;
-    letter-spacing: -1px;
-}
-
-/* ================================
-   ABOUT
-================================ */
-
-.about-content {
-    display: grid;
-    grid-template-columns: 1.3fr 1fr;
-    gap: 70px;
-}
-
-.about-text p {
-    color: #64748b;
-    margin-bottom: 20px;
-    font-size: 16px;
-}
-
-.about-info {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
-}
-
-.info-box {
-    background: white;
-    padding: 22px;
-    border: 1px solid #e2e8f0;
-    border-radius: 10px;
-}
-
-.info-box strong {
-    display: block;
-    font-size: 13px;
-    color: #2563eb;
-    margin-bottom: 5px;
-}
-
-.info-box span {
-    font-size: 14px;
-    color: #475569;
-}
-
-/* ================================
-   EDUCATION TIMELINE
-================================ */
-
-.timeline {
-    position: relative;
-    max-width: 900px;
-}
-
-.timeline::before {
-    content: "";
-    position: absolute;
-    left: 7px;
-    top: 5px;
-    bottom: 5px;
-    width: 2px;
-    background: #cbd5e1;
-}
-
-.timeline-item {
-    position: relative;
-    padding-left: 45px;
-    margin-bottom: 45px;
-}
-
-.timeline-dot {
-    position: absolute;
-    left: 0;
-    top: 7px;
-    width: 16px;
-    height: 16px;
-    background: #2563eb;
-    border: 4px solid #dbeafe;
-    border-radius: 50%;
-}
-
-.timeline-date {
-    color: #2563eb;
-    font-size: 12px;
-    font-weight: 800;
-    letter-spacing: 1px;
-}
-
-.timeline-content h3 {
-    font-size: 22px;
-    margin: 5px 0;
-}
-
-.timeline-content h4 {
-    font-size: 15px;
-    color: #475569;
-    font-weight: 600;
-    margin-bottom: 10px;
-}
-
-.timeline-content p {
-    color: #64748b;
-}
-
-/* ================================
-   EXPERIENCE
-================================ */
-
-.experience-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 25px;
-}
-
-.experience-card {
-    position: relative;
-    background: white;
-    padding: 35px;
-    border: 1px solid #e2e8f0;
-    border-radius: 14px;
-    transition: 0.3s;
-}
-
-.experience-card:hover,
-.project-card:hover,
-.skill-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
-}
-
-.card-number {
-    color: #2563eb;
-    font-weight: 800;
-    font-size: 13px;
-    margin-bottom: 18px;
-}
-
-.experience-card h3 {
-    font-size: 23px;
-    margin-bottom: 5px;
-}
-
-.experience-card h4 {
-    color: #475569;
-    margin-bottom: 15px;
-}
-
-.experience-card p {
-    color: #64748b;
-    font-size: 15px;
-}
-
-/* ================================
-   TAGS
-================================ */
-
-.tags {
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-    margin-top: 20px;
-}
-
-.tags span {
-    padding: 5px 10px;
-    background: #eff6ff;
-    color: #2563eb;
-    border-radius: 20px;
-    font-size: 11px;
-    font-weight: 700;
-}
-
-/* ================================
-   SKILLS
-================================ */
-
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-}
-
-.skill-card {
-    background: white;
-    padding: 30px;
-    border: 1px solid #e2e8f0;
-    border-radius: 14px;
-    transition: 0.3s;
-}
-
-.skill-icon {
-    font-size: 30px;
-    margin-bottom: 18px;
-}
-
-.skill-card h3 {
-    font-size: 19px;
-    margin-bottom: 8px;
-}
-
-.skill-card p {
-    color: #64748b;
-    font-size: 14px;
-}
-
-/* ================================
-   PROJECTS
-================================ */
-
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-}
-
-.project-card {
-    background: white;
-    padding: 30px;
-    border: 1px solid #e2e8f0;
-    border-radius: 14px;
-    transition: 0.3s;
-}
-
-.project-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 25px;
-}
-
-.project-label {
-    color: #2563eb;
-    font-size: 11px;
-    font-weight: 800;
-    letter-spacing: 1px;
-}
-
-.project-icon {
-    font-size: 20px;
-    color: #94a3b8;
-}
-
-.project-card h3 {
-    font-size: 21px;
-    margin-bottom: 12px;
-}
-
-.project-card p {
-    color: #64748b;
-    font-size: 14px;
-}
-
-/* ================================
-   LANGUAGES
-================================ */
-
-.language-list {
-    max-width: 750px;
-}
-
-.language-item {
-    display: flex;
-    justify-content: space-between;
-    padding: 18px 0;
-    border-bottom: 1px solid #cbd5e1;
-}
-
-.language-item span:first-child {
-    font-weight: 700;
-}
-
-.language-item span:last-child {
-    color: #64748b;
-}
-
-/* ================================
-   CONTACT
-================================ */
-
-.contact-section {
-    padding: 90px 0;
-    background: #0f172a;
-    color: white;
-}
-
-.contact-content {
-    display: grid;
-    grid-template-columns: 1.5fr 1fr;
-    gap: 70px;
-    align-items: center;
-}
-
-.contact-section .small-heading {
-    color: #60a5fa;
-}
-
-.contact-section h2 {
-    font-size: 44px;
-    margin-bottom: 15px;
-}
-
-.contact-section p:not(.small-heading) {
-    color: #94a3b8;
-    max-width: 650px;
-}
-
-.contact-buttons {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-.contact-btn {
-    padding: 13px 20px;
-    border: 1px solid #334155;
-    border-radius: 8px;
-    text-align: center;
-    font-weight: 700;
-    transition: 0.3s;
-}
-
-.contact-btn:hover {
-    background: #2563eb;
-    border-color: #2563eb;
-}
-
-/* ================================
-   FOOTER
-================================ */
-
-footer {
-    background: #020617;
-    color: #64748b;
-    padding: 25px 0;
-}
-
-footer .container {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-    font-size: 12px;
-}
-
-/* ================================
-   MOBILE RESPONSIVE
-================================ */
-
-@media (max-width: 850px) {
-
-    nav {
-        display: none;
-    }
-
-    .hero {
-        padding: 80px 0;
-    }
-
-    .hero-content,
-    .about-content,
-    .contact-content {
-        grid-template-columns: 1fr;
-        gap: 45px;
-    }
-
-    .hero-card {
-        max-width: 420px;
-        width: 100%;
-        margin: auto;
-    }
-
-    .skills-grid,
-    .projects-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .experience-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media (max-width: 550px) {
-
-    .section {
-        padding: 70px 0;
-    }
-
-    .hero h1 {
-        font-size: 52px;
-        letter-spacing: -2px;
-    }
-
-    .hero h2 {
-        font-size: 20px;
-    }
-
-    .section-title h2 {
-        font-size: 31px;
-    }
-
-    .skills-grid,
-    .projects-grid,
-    .about-info {
-        grid-template-columns: 1fr;
-    }
-
-    .hero-buttons {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    .btn {
-        text-align: center;
-    }
-
-    footer .container {
-        flex-direction: column;
-    }
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Attah U Llah Beigh | Electrical Engineering Portfolio</title>
+
+    <meta name="description"
+          content="Portfolio of Attah U Llah Beigh, Final-Year Electrical Engineering Student specializing in Power Systems, Renewable Energy and Automation.">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Animated 3D Background -->
+    <div class="background">
+        <div class="grid"></div>
+        <div class="glow glow-1"></div>
+        <div class="glow glow-2"></div>
+        <div class="particles"></div>
+    </div>
+
+    <!-- Navigation -->
+    <header class="navbar">
+        <div class="nav-container">
+
+            <a href="#home" class="logo">
+                Attah<span>.</span>
+            </a>
+
+            <nav>
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#education">Education</a>
+                <a href="#experience">Experience</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </nav>
+
+        </div>
+    </header>
+
+
+    <!-- HERO -->
+    <section id="home" class="hero">
+
+        <div class="hero-content">
+
+            <p class="small-title">HELLO, I'M</p>
+
+            <h1>
+                Attah U Llah
+                <span>Beigh</span>
+            </h1>
+
+            <h2>Electrical Engineering Student</h2>
+
+            <p class="hero-text">
+                Final-year Electrical Engineering student with practical exposure
+                to power systems, transmission and distribution, renewable energy
+                and industrial electrical systems.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#projects" class="btn primary">View My Projects</a>
+                <a href="#contact" class="btn secondary">Contact Me</a>
+            </div>
+
+        </div>
+
+
+        <!-- 3D Engineering Card -->
+        <div class="hero-card">
+
+            <div class="card-3d">
+
+                <div class="circle">
+                    <span>AB</span>
+                </div>
+
+                <h3>Electrical Engineering</h3>
+
+                <p>
+                    Power Systems • Renewable Energy • Automation
+                </p>
+
+                <div class="card-lines">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+    <section id="about" class="section">
+
+        <p class="section-label">ABOUT ME</p>
+
+        <h2 class="section-title">Professional Profile</h2>
+
+        <div class="about-box">
+
+            <p>
+                I am a final-year Electrical Engineering student with a strong
+                interest in power systems, transmission and distribution,
+                renewable energy and electrical automation.
+            </p>
+
+            <p>
+                I have practical exposure through industrial training and
+                internship experience, including work related to electrical
+                power systems and grid station operations.
+            </p>
+
+            <p>
+                I am continuously improving my technical knowledge and looking
+                for opportunities where I can apply my engineering skills in
+                real-world projects.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- EDUCATION -->
+    <section id="education" class="section">
+
+        <p class="section-label">EDUCATION</p>
+
+        <h2 class="section-title">Academic Background</h2>
+
+        <div class="cards">
+
+            <div class="info-card">
+                <span class="year">Final Year</span>
+                <h3>B.Tech Electrical Engineering</h3>
+                <p>Baba Farid College of Engineering and Technology</p>
+                <p class="muted">MRSPTU</p>
+            </div>
+
+            <div class="info-card">
+                <span class="year">Diploma</span>
+                <h3>Diploma in Electrical Engineering</h3>
+                <p>Government Polytechnic College, Gogji Bagh, Srinagar</p>
+                <p class="muted">68%</p>
+            </div>
+
+            <div class="info-card">
+                <span class="year">10th</span>
+                <h3>Secondary Education</h3>
+                <p>Government Boys Higher Secondary School, Lone Harie, Kupwara</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="section">
+
+        <p class="section-label">EXPERIENCE</p>
+
+        <h2 class="section-title">Training & Internship</h2>
+
+        <div class="timeline">
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-content">
+
+                    <span>Industrial Training</span>
+
+                    <h3>Grid Station Villgam</h3>
+
+                    <p>
+                        132/33 kV, 100 MVA Grid Station, Jammu & Kashmir.
+                    </p>
+
+                    <p>
+                        Practical exposure to power transmission,
+                        distribution, protection, grid equipment and
+                        substation operations.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-content">
+
+                    <span>Internship</span>
+
+                    <h3>JK Power Department Development</h3>
+
+                    <p>
+                        Six-month internship with practical exposure to
+                        electrical systems and field-level engineering work.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SKILLS -->
+    <section id="skills" class="section">
+
+        <p class="section-label">SKILLS</p>
+
+        <h2 class="section-title">Technical Skills</h2>
+
+        <div class="skills-grid">
+
+            <div class="skill">
+                <h3>⚡ Power Systems</h3>
+                <p>Generation, transmission, distribution and protection.</p>
+            </div>
+
+            <div class="skill">
+                <h3>🔌 Electrical Engineering</h3>
+                <p>Electrical wiring, equipment and industrial systems.</p>
+            </div>
+
+            <div class="skill">
+                <h3>🌱 Renewable Energy</h3>
+                <p>Solar, wind and hybrid renewable energy systems.</p>
+            </div>
+
+            <div class="skill">
+                <h3>🤖 Automation</h3>
+                <p>PLC, control systems and industrial automation basics.</p>
+            </div>
+
+            <div class="skill">
+                <h3>💻 Digital Tools</h3>
+                <p>Microsoft Word, Excel, GitHub and online productivity tools.</p>
+            </div>
+
+            <div class="skill">
+                <h3>🤝 Professional Skills</h3>
+                <p>Teamwork, coordination, communication and problem solving.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section">
+
+        <p class="section-label">PROJECTS</p>
+
+        <h2 class="section-title">My Projects</h2>
+
+        <div class="projects-grid">
+
+            <div class="project-card">
+
+                <div class="project-icon">⚡</div>
+
+                <h3>IoT Based Smart Switch</h3>
+
+                <p>
+                    An IoT-based electrical switching project designed
+                    for smart control of electrical loads.
+                </p>
+
+                <div class="tags">
+                    <span>IoT</span>
+                    <span>ESP8266</span>
+                    <span>Automation</span>
+                </div>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <div class="project-icon">🏭</div>
+
+                <h3>Material Elevator Control System</h3>
+
+                <p>
+                    PLC-based material elevator control system using
+                    a DC motor, control panel and automation logic.
+                </p>
+
+                <div class="tags">
+                    <span>PLC</span>
+                    <span>DC Motor</span>
+                    <span>Automation</span>
+                </div>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <div class="project-icon">🔋</div>
+
+                <h3>Power System Study</h3>
+
+                <p>
+                    Academic work related to electrical power systems,
+                    transmission, distribution and grid infrastructure.
+                </p>
+
+                <div class="tags">
+                    <span>Power System</span>
+                    <span>T&D</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+    <section id="contact" class="section contact-section">
+
+        <p class="section-label">CONTACT</p>
+
+        <h2 class="section-title">Let's Connect</h2>
+
+        <p class="contact-text">
+            Interested in connecting or discussing an engineering project?
+            Feel free to contact me.
+        </p>
+
+        <div class="contact-cards">
+
+            <a href="mailto:YOUR_EMAIL@gmail.com" class="contact-card">
+                <span>✉️</span>
+                <div>
+                    <strong>Email</strong>
+                    <p>Send me an email</p>
+                </div>
+            </a>
+
+            <a href="https://www.linkedin.com/" target="_blank" class="contact-card">
+                <span>💼</span>
+                <div>
+                    <strong>LinkedIn</strong>
+                    <p>Connect with me</p>
+                </div>
+            </a>
+
+            <a href="https://github.com/attahullah1357er"
+               target="_blank"
+               class="contact-card">
+                <span>💻</span>
+                <div>
+                    <strong>GitHub</strong>
+                    <p>View my projects</p>
+                </div>
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <p>
+            © 2026 Attah U Llah Beigh. All rights reserved.
+        </p>
+
+        <p>
+            Electrical Engineering Portfolio
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
