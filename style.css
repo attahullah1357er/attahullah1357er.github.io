@@ -713,3 +713,18 @@ footer {
         height: 230px;
     }
 }
+.profile-photo {
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: 40px;
+}
+
+.profile-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
