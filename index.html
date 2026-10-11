@@ -1,575 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Attah U Llah Beigh | Electrical Engineering Portfolio</title>
-
-    <meta name="description"
-          content="Professional portfolio of Attah U Llah Beigh, a final-year Electrical Engineering student with experience in power systems, transmission and distribution, renewable energy and industrial training.">
-
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Attah U Llah Beigh | Electrical Engineering Portfolio</title>
+<meta name="description" content="Portfolio of Attah U Llah Beigh, final-year B.Tech Electrical Engineering student with experience in power systems, substations, renewable energy and PLC automation.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-    <!-- Navigation -->
-    <header class="navbar">
-        <div class="container nav-container">
+<header class="site-header">
+  <div class="container bar">
+    <a href="#home" class="logo">Attah Beigh</a>
+    <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">Menu</button>
+    <nav class="nav-links">
+      <a href="#about">About</a>
+      <a href="#education">Education</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
 
-            <a href="#home" class="logo">
-                Attah<span>.</span>
-            </a>
-
-            <nav>
-                <a href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#education">Education</a>
-                <a href="#experience">Experience</a>
-                <a href="#skills">Skills</a>
-                <a href="#projects">Projects</a>
-                <a href="#contact">Contact</a>
-            </nav>
-
-        </div>
-    </header>
-
-
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-
- <div class="container hero-content">
-
-    <div class="profile-photo">
-        <img src="IMG-20260801-WA0015.jpg" alt="Attah U Llah Beigh">
-    </div>
-
+<main>
+<section id="home" class="hero">
+  <canvas id="waves" aria-hidden="true"></canvas>
+  <div class="container hero-grid">
     <div class="hero-text">
-
-                <p class="small-heading">HELLO, I'M</p>
-
-                <h1>Attah U Llah<br><span>Beigh</span></h1>
-
-                <h2>Electrical Engineering Student</h2>
-
-                <p>
-                    Final-year Electrical Engineering student with practical
-                    exposure to power systems, transmission and distribution,
-                    renewable energy and industrial electrical systems.
-                </p>
-
-                <div class="hero-buttons">
-                    <a href="#projects" class="btn primary-btn">
-                        View My Projects
-                    </a>
-
-                    <a href="#contact" class="btn secondary-btn">
-                        Contact Me
-                    </a>
-                </div>
-
-            </div>
-
-
-            <div class="hero-card">
-
-                <div class="profile-placeholder">
-                    <span>AB</span>
-                </div>
-
-                <h3>Electrical Engineering</h3>
-
-                <p>Power Systems • Renewable Energy • Automation</p>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- About Section -->
-    <section id="about" class="section">
-
-        <div class="container">
-
-            <div class="section-title">
-                <p>ABOUT ME</p>
-                <h2>Professional Profile</h2>
-            </div>
-
-            <div class="about-content">
-
-                <div class="about-text">
-
-                    <p>
-                        I am a final-year Electrical Engineering student with
-                        an academic background in Electrical Engineering and
-                        practical industrial exposure through internships and
-                        technical training.
-                    </p>
-
-                    <p>
-                        My main areas of interest include power systems,
-                        transmission and distribution, electrical substations,
-                        renewable energy systems, PLC and industrial
-                        automation.
-                    </p>
-
-                    <p>
-                        I am interested in developing practical engineering
-                        skills and applying electrical engineering concepts to
-                        real-world systems and projects.
-                    </p>
-
-                </div>
-
-                <div class="about-info">
-
-                    <div class="info-box">
-                        <strong>Field</strong>
-                        <span>Electrical Engineering</span>
-                    </div>
-
-                    <div class="info-box">
-                        <strong>Specialization</strong>
-                        <span>Power & Energy Systems</span>
-                    </div>
-
-                    <div class="info-box">
-                        <strong>Focus</strong>
-                        <span>Power Systems & Automation</span>
-                    </div>
-
-                    <div class="info-box">
-                        <strong>Status</strong>
-                        <span>Final-Year Student</span>
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- Education Section -->
-    <section id="education" class="section alternate">
-
-        <div class="container">
-
-            <div class="section-title">
-                <p>EDUCATION</p>
-                <h2>Academic Background</h2>
-            </div>
-
-            <div class="timeline">
-
-                <div class="timeline-item">
-
-                    <div class="timeline-dot"></div>
-
-                    <div class="timeline-content">
-
-                        <span class="timeline-date">
-                            Current
-                        </span>
-
-                        <h3>B.Tech in Electrical Engineering</h3>
-
-                        <h4>
-                            Baba Farid College of Engineering and Technology,
-                            Bathinda
-                        </h4>
-
-                        <p>
-                            Final-year undergraduate studies with focus on
-                            electrical power systems, transmission and
-                            distribution, renewable energy and industrial
-                            applications.
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                <div class="timeline-item">
-
-                    <div class="timeline-dot"></div>
-
-                    <div class="timeline-content">
-
-                        <span class="timeline-date">
-                            Diploma
-                        </span>
-
-                        <h3>Diploma in Electrical Engineering</h3>
-
-                        <h4>
-                            Kashmir Government Polytechnic College,
-                            Gogji Bagh, Srinagar
-                        </h4>
-
-                        <p>
-                            Diploma-level education in Electrical Engineering
-                            with a strong foundation in electrical machines,
-                            power systems, measurements and electrical
-                            installations.
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- Experience Section -->
-    <section id="experience" class="section">
-
-        <div class="container">
-
-            <div class="section-title">
-                <p>EXPERIENCE</p>
-                <h2>Internships & Industrial Training</h2>
-            </div>
-
-            <div class="experience-grid">
-
-                <article class="experience-card">
-
-                    <div class="card-number">01</div>
-
-                    <h3>Industrial Internship</h3>
-
-                    <h4>JK Power Department Development</h4>
-
-                    <p>
-                        Completed a six-month internship with practical
-                        exposure to electrical power systems and field-level
-                        electrical operations.
-                    </p>
-
-                    <div class="tags">
-                        <span>Power Systems</span>
-                        <span>Electrical Engineering</span>
-                    </div>
-
-                </article>
-
-
-                <article class="experience-card">
-
-                    <div class="card-number">02</div>
-
-                    <h3>Industrial Training</h3>
-
-                    <h4>Grid Station Villgam</h4>
-
-                    <p>
-                        Completed six-week industrial training at a
-                        132/33 kV, 100 MVA grid station, gaining practical
-                        exposure to substation equipment, protection,
-                        control and power transmission systems.
-                    </p>
-
-                    <div class="tags">
-                        <span>132/33 kV</span>
-                        <span>Substation</span>
-                        <span>Power Transmission</span>
-                    </div>
-
-                </article>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- Skills Section -->
-    <section id="skills" class="section alternate">
-
-        <div class="container">
-
-            <div class="section-title">
-                <p>TECHNICAL SKILLS</p>
-                <h2>What I Work With</h2>
-            </div>
-
-            <div class="skills-grid">
-
-                <div class="skill-card">
-                    <div class="skill-icon">⚡</div>
-                    <h3>Power Systems</h3>
-                    <p>
-                        Power generation, transmission, distribution and
-                        electrical grid concepts.
-                    </p>
-                </div>
-
-                <div class="skill-card">
-                    <div class="skill-icon">🔌</div>
-                    <h3>Transmission & Distribution</h3>
-                    <p>
-                        Electrical lines, substations, protection and
-                        distribution systems.
-                    </p>
-                </div>
-
-                <div class="skill-card">
-                    <div class="skill-icon">☀</div>
-                    <h3>Renewable Energy</h3>
-                    <p>
-                        Solar and wind energy systems and renewable energy
-                        technologies.
-                    </p>
-                </div>
-
-                <div class="skill-card">
-                    <div class="skill-icon">⚙</div>
-                    <h3>PLC & Automation</h3>
-                    <p>
-                        Basic PLC concepts, ladder logic and industrial
-                        automation systems.
-                    </p>
-                </div>
-
-                <div class="skill-card">
-                    <div class="skill-icon">📊</div>
-                    <h3>Electrical Measurements</h3>
-                    <p>
-                        Electrical measurement instruments and
-                        instrumentation concepts.
-                    </p>
-                </div>
-
-                <div class="skill-card">
-                    <div class="skill-icon">💻</div>
-                    <h3>Digital Tools</h3>
-                    <p>
-                        Microsoft Word, Microsoft Excel, documentation and
-                        technical presentation.
-                    </p>
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- Projects Section -->
-    <section id="projects" class="section">
-
-        <div class="container">
-
-            <div class="section-title">
-                <p>PROJECTS</p>
-                <h2>Featured Projects</h2>
-            </div>
-
-            <div class="projects-grid">
-
-                <article class="project-card">
-
-                    <div class="project-top">
-                        <span class="project-label">IOT</span>
-                        <span class="project-icon">↗</span>
-                    </div>
-
-                    <h3>IoT Based Smart Switch</h3>
-
-                    <p>
-                        A smart switching project based on IoT technology,
-                        designed to provide remote control and monitoring of
-                        electrical loads.
-                    </p>
-
-                    <div class="tags">
-                        <span>IoT</span>
-                        <span>Smart Control</span>
-                        <span>Electrical</span>
-                    </div>
-
-                </article>
-
-
-                <article class="project-card">
-
-                    <div class="project-top">
-                        <span class="project-label">AUTOMATION</span>
-                        <span class="project-icon">↗</span>
-                    </div>
-
-                    <h3>Material Elevator Control System</h3>
-
-                    <p>
-                        A control system project involving a material elevator,
-                        DC motor, control panel and PLC-based automation
-                        concepts.
-                    </p>
-
-                    <div class="tags">
-                        <span>PLC</span>
-                        <span>DC Motor</span>
-                        <span>Automation</span>
-                    </div>
-
-                </article>
-
-
-                <article class="project-card">
-
-                    <div class="project-top">
-                        <span class="project-label">POWER</span>
-                        <span class="project-icon">↗</span>
-                    </div>
-
-                    <h3>Grid Station Study</h3>
-
-                    <p>
-                        Technical study and industrial training focused on
-                        the operation and equipment of a 132/33 kV,
-                        100 MVA grid station.
-                    </p>
-
-                    <div class="tags">
-                        <span>Substation</span>
-                        <span>132/33 kV</span>
-                        <span>Protection</span>
-                    </div>
-
-                </article>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- Languages Section -->
-    <section class="section alternate">
-
-        <div class="container">
-
-            <div class="section-title">
-                <p>LANGUAGES</p>
-                <h2>Communication</h2>
-            </div>
-
-            <div class="language-list">
-
-                <div class="language-item">
-                    <span>English</span>
-                    <span>Professional</span>
-                </div>
-
-                <div class="language-item">
-                    <span>Hindi</span>
-                    <span>Working</span>
-                </div>
-
-                <div class="language-item">
-                    <span>Urdu</span>
-                    <span>Fluent</span>
-                </div>
-
-                <div class="language-item">
-                    <span>Kashmiri</span>
-                    <span>Fluent</span>
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact-section">
-
-        <div class="container contact-content">
-
-            <div>
-
-                <p class="small-heading">GET IN TOUCH</p>
-
-                <h2>Let's Connect</h2>
-
-                <p>
-                    Interested in electrical engineering, power systems,
-                    renewable energy, industrial training or professional
-                    opportunities? Feel free to connect with me.
-                </p>
-
-            </div>
-
-<div class="contact-details">
-    <p><strong>Phone:</strong>
-        <a href="tel:+919107060681">+91 91070 60681</a>
+      <p class="hello">Hello, I'm</p>
+      <h1>Attah U Llah Beigh</h1>
+      <p class="role">Electrical Engineering student, final year</p>
+      <p class="lead">I work on power systems, transmission and distribution, renewable energy and industrial automation. I have trained inside a 132/33 kV grid station and completed a six-month internship with the J&amp;K power department.</p>
+      <div class="actions">
+        <a href="#projects" class="btn solid">See my projects</a>
+        <a href="#contact" class="btn ghost">Contact me</a>
+      </div>
+    </div>
+    <div class="photo"><img src="IMG-20260801-WA0015.jpg" alt="Portrait of Attah U Llah Beigh"></div>
+  </div>
+</section>
+
+<section id="about" class="section">
+  <div class="container split">
+    <h2>About me</h2>
+    <div>
+      <p class="big">I am a final-year Electrical Engineering student who learns best on real equipment: substations, control panels and live networks.</p>
+      <p>My main interests are power systems, transmission and distribution, electrical substations, renewable energy, PLC and industrial automation. I want to apply what I study to real systems and projects.</p>
+      <dl class="facts">
+        <div><dt>Field</dt><dd>Electrical Engineering</dd></div>
+        <div><dt>Specialization</dt><dd>Power and energy systems</dd></div>
+        <div><dt>Focus</dt><dd>Power systems and automation</dd></div>
+        <div><dt>Status</dt><dd>Final-year student</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section id="education" class="section tint">
+  <div class="container split">
+    <h2>Education</h2>
+    <ol class="timeline">
+      <li>
+        <span class="when">Now</span>
+        <h3>B.Tech in Electrical Engineering</h3>
+        <p class="where">Baba Farid College of Engineering and Technology, Bathinda</p>
+        <p>Final-year studies in power systems, transmission and distribution, renewable energy and industrial applications.</p>
+      </li>
+      <li>
+        <span class="when">Before</span>
+        <h3>Diploma in Electrical Engineering</h3>
+        <p class="where">Kashmir Government Polytechnic College, Gogji Bagh, Srinagar</p>
+        <p>Foundation in electrical machines, power systems, measurements and electrical installations.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section id="experience" class="section">
+  <div class="container split">
+    <h2>Experience</h2>
+    <div class="jobs">
+      <article>
+        <h3>Industrial internship</h3>
+        <p class="where">JK Power Department Development</p>
+        <p>Six months of hands-on exposure to electrical power systems and field-level operations.</p>
+        <p class="chips"><span>Power systems</span><span>Field operations</span></p>
+      </article>
+      <article>
+        <h3>Industrial training</h3>
+        <p class="where">Grid Station Villgam, 132/33 kV, 100 MVA</p>
+        <p>Six weeks on substation equipment, protection, control and power transmission.</p>
+        <p class="chips"><span>132/33 kV</span><span>Protection</span><span>Transmission</span></p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="skills" class="section tint">
+  <div class="container split">
+    <h2>Skills</h2>
+    <ul class="skills">
+      <li><h3>Power systems</h3><p>Generation, transmission, distribution and grid concepts.</p></li>
+      <li><h3>Transmission and distribution</h3><p>Lines, substations, protection and distribution networks.</p></li>
+      <li><h3>Renewable energy</h3><p>Solar and wind energy systems.</p></li>
+      <li><h3>PLC and automation</h3><p>PLC basics, ladder logic and industrial automation.</p></li>
+      <li><h3>Electrical measurements</h3><p>Measuring instruments and instrumentation.</p></li>
+      <li><h3>Digital tools</h3><p>Microsoft Word, Excel, documentation and technical presentation.</p></li>
+    </ul>
+  </div>
+</section>
+
+<section id="projects" class="section">
+  <div class="container split">
+    <h2>Projects</h2>
+    <div class="projects">
+      <article>
+        <h3>IoT based smart switch</h3>
+        <p>Remote control and monitoring of electrical loads over IoT.</p>
+        <p class="chips"><span>IoT</span><span>Smart control</span></p>
+      </article>
+      <article>
+        <h3>Material elevator control system</h3>
+        <p>A material elevator driven by a DC motor, with a control panel and PLC-based automation.</p>
+        <p class="chips"><span>PLC</span><span>DC motor</span><span>Automation</span></p>
+      </article>
+      <article>
+        <h3>Grid station study</h3>
+        <p>Study of the operation and equipment of a 132/33 kV, 100 MVA grid station, from industrial training.</p>
+        <p class="chips"><span>Substation</span><span>Protection</span></p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section tint">
+  <div class="container split">
+    <h2>Languages</h2>
+    <ul class="langs">
+      <li>English <span>Professional</span></li>
+      <li>Hindi <span>Working</span></li>
+      <li>Urdu <span>Fluent</span></li>
+      <li>Kashmiri <span>Fluent</span></li>
+    </ul>
+  </div>
+</section>
+</main>
+
+<section id="contact" class="contact">
+  <div class="container">
+    <h2>Let's work together</h2>
+    <p>Open to internships, training and entry-level roles in power systems, renewable energy and automation.</p>
+    <p class="lines">
+      <a href="mailto:attahullahbeigh1357@gmail.com">attahullahbeigh1357@gmail.com</a>
+      <a href="tel:+919107060681">+91 91070 60681</a>
     </p>
+    <div class="actions">
+      <a class="btn solid" href="mailto:attahullahbeigh1357@gmail.com">Send email</a>
+      <a class="btn ghost" href="https://in.linkedin.com/in/attah-u-llah-beigh-b4bb571b0" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn ghost" href="https://github.com/attahullah1357er" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</section>
 
-    <p><strong>Email:</strong>
-        <a href="mailto:attahullahbeigh1357@gmail.com">
-            attahullahbeigh1357@gmail.com
-        </a>
-    </p>
-</div>
-            <div class="contact-buttons">
+<footer>
+  <div class="container">&copy; <span id="current-year">2026</span> Attah U Llah Beigh. Electrical Engineering portfolio.</div>
+</footer>
 
-                <!-- Add your actual links later -->
-
-                <a href="#" class="erattahullah1357@gmail.com">
-                    Email
-                </a>
-
-                <a href="#" class="https://in.linkedin.com/in/attah-u-llah-beigh-b4bb571b0">
-                    LinkedIn
-                </a>
-
-                <a href="#" class="attahullah1357er.github.io">
-                    GitHub
-                </a>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- Footer -->
-    <footer>
-
-        <div class="container">
-
-            <p>
-                © 2026 Attah U Llah Beigh. All rights reserved.
-            </p>
-
-            <p>
-                Electrical Engineering Portfolio
-            </p>
-
-        </div>
-
-    </footer>
-
-
-    <script src="script.js"></script>
-
+<script src="script.js"></script>
 </body>
 </html>
