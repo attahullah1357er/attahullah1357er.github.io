@@ -13,11 +13,6 @@ document.querySelectorAll(".nav-links a").forEach(link => {
     link.addEventListener("click", () => { if (navLinks) navLinks.classList.remove("active"); });
 });
 
-// Announcement banner
-const banner = document.getElementById("banner");
-const bannerClose = document.getElementById("bannerClose");
-if (banner && bannerClose) bannerClose.addEventListener("click", () => banner.classList.add("hide"));
-
 // Current year in footer
 const yearElement = document.getElementById("current-year");
 if (yearElement) yearElement.textContent = new Date().getFullYear();
@@ -44,47 +39,3 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
         }
     });
 });
-
-// Three-phase AC waveform in the hero (phases 120 degrees apart), with glow
-const canvas = document.getElementById("waves");
-if (canvas) {
-    const ctx = canvas.getContext("2d");
-    const colors = ["#ffc83d", "#4fd1e8", "#8b6bff"];
-    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    let t = 0;
-
-    function resize() {
-        const dpr = window.devicePixelRatio || 1;
-        canvas.width = canvas.clientWidth * dpr;
-        canvas.height = canvas.clientHeight * dpr;
-        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    }
-
-    function draw() {
-        const w = canvas.clientWidth, h = canvas.clientHeight;
-        ctx.clearRect(0, 0, w, h);
-        colors.forEach((c, i) => {
-            ctx.beginPath();
-            for (let x = 0; x <= w; x += 4) {
-                const y = h / 2 + Math.sin(x / 90 - t + i * 2.094) * (h * 0.32);
-                x === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
-            }
-            ctx.strokeStyle = c;
-            ctx.shadowColor = c;
-            ctx.shadowBlur = 14;
-            ctx.globalAlpha = 0.85;
-            ctx.lineWidth = 2;
-            ctx.stroke();
-        });
-        ctx.globalAlpha = 1;
-        ctx.shadowBlur = 0;
-        if (!reduce) {
-            t += 0.03;
-            requestAnimationFrame(draw);
-        }
-    }
-
-    window.addEventListener("resize", () => { resize(); if (reduce) draw(); });
-    resize();
-    draw();
-}
