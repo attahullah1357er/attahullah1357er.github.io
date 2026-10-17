@@ -8,20 +8,55 @@
 <meta name="google-site-verification" content="AX1bPegK20SlBSsNhf59HftJDLyADob2TUCViV4lNVI" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="banner" id="banner">
-  <span class="badge">New</span>
-  <span>Open to internships and entry-level roles in power systems and automation</span>
-  <a href="#contact">Contact me</a>
-  <button class="banner-close" id="bannerClose" aria-label="Close banner">&times;</button>
+<!-- Shared drawings (pylon, wind turbine, solar panel) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="pylon" viewBox="0 0 100 200">
+      <g fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round">
+        <path d="M50 4 L38 60 L24 200 M50 4 L62 60 L76 200"/>
+        <path d="M4 46 H96 M14 84 H86 M20 120 H80"/>
+        <path d="M38 60 L62 84 M62 60 L38 84 M31 110 L69 84 M69 110 L31 84 M27 150 L73 120 M73 150 L27 120 M24 200 L76 150 M76 200 L24 150"/>
+        <path d="M4 46 L38 60 M96 46 L62 60 M14 84 L38 70 M86 84 L62 70"/>
+      </g>
+    </symbol>
+    <symbol id="turbine" viewBox="0 0 100 160">
+      <g stroke="currentColor" stroke-width="1.5" style="fill:var(--fill,none)">
+        <path d="M47 62 L53 62 L55 160 L45 160Z"/>
+        <g class="blades">
+          <path d="M50 60 C45 40 47 20 50 2 C53 20 55 40 50 60Z"/>
+          <path d="M50 60 C45 40 47 20 50 2 C53 20 55 40 50 60Z" transform="rotate(120 50 60)"/>
+          <path d="M50 60 C45 40 47 20 50 2 C53 20 55 40 50 60Z" transform="rotate(240 50 60)"/>
+        </g>
+        <circle cx="50" cy="60" r="3"/>
+      </g>
+    </symbol>
+    <symbol id="solar" viewBox="0 0 160 90">
+      <g stroke="currentColor" stroke-width="1.5" style="fill:var(--fill,none)">
+        <path d="M10 85 L45 8 L155 8 L125 85Z"/>
+        <path d="M34 33 H145 M22 59 H135 M72 8 L39 85 M100 8 L67 85 M128 8 L96 85" fill="none"/>
+      </g>
+    </symbol>
+    <symbol id="icon-briefcase" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2M3 13h18"/></g></symbol>
+    <symbol id="icon-bolt" viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z" fill="currentColor"/></symbol>
+  </defs>
+</svg>
+
+<!-- Lightly floating wireframe objects behind the whole page -->
+<div class="float-bg" aria-hidden="true">
+  <svg class="fl f1" viewBox="0 0 100 200"><use href="#pylon"/></svg>
+  <svg class="fl f2" viewBox="0 0 100 160"><use href="#turbine"/></svg>
+  <svg class="fl f3" viewBox="0 0 160 90"><use href="#solar"/></svg>
+  <svg class="fl f4" viewBox="0 0 100 200"><use href="#pylon"/></svg>
+  <svg class="fl f5" viewBox="0 0 100 160"><use href="#turbine"/></svg>
 </div>
 
 <header class="site-header">
-  <div class="container bar">
+  <div class="bar">
     <a href="#home" class="logo">Attah U Llah Beigh</a>
     <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">Menu</button>
     <nav class="nav-links">
@@ -30,47 +65,135 @@
       <a href="#experience">Experience</a>
       <a href="#skills">Skills</a>
       <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
       <a href="#contact" class="nav-cta">Contact</a>
     </nav>
   </div>
 </header>
 
 <main>
+<!-- HERO -->
 <section id="home" class="hero">
-  <canvas id="waves" aria-hidden="true"></canvas>
+  <svg class="scene" viewBox="0 0 1440 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <defs>
+      <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#0a0a3c"/><stop offset=".55" stop-color="#1c1a8f"/><stop offset="1" stop-color="#2a1f9e"/>
+      </linearGradient>
+      <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#070621" stop-opacity="0"/><stop offset="1" stop-color="#070621"/>
+      </linearGradient>
+      <linearGradient id="shade" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0" stop-color="#070621" stop-opacity=".55"/><stop offset=".6" stop-color="#070621" stop-opacity="0"/>
+      </linearGradient>
+      <filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+      <filter id="blur"><feGaussianBlur stdDeviation="14"/></filter>
+    </defs>
+    <rect width="1440" height="800" fill="url(#sky)"/>
+    <g fill="#bcd0ff"><circle cx="300" cy="60" r="1.5"/><circle cx="520" cy="110" r="1.2"/><circle cx="760" cy="50" r="1.6"/><circle cx="980" cy="120" r="1.2"/><circle cx="1100" cy="40" r="1.5"/><circle cx="620" cy="30" r="1.1"/><circle cx="1380" cy="90" r="1.3"/></g>
+    <!-- far hills + city lights -->
+    <path d="M0 520 C220 440 380 500 560 470 S900 400 1100 440 S1340 420 1440 410 V800 H0Z" fill="#0c0b45"/>
+    <g fill="#ffcf6b" filter="url(#glow)"><circle cx="820" cy="420" r="2"/><circle cx="850" cy="426" r="2"/><circle cx="880" cy="418" r="2"/><circle cx="910" cy="428" r="2"/><circle cx="940" cy="420" r="2"/></g>
+    <!-- cooling towers + steam -->
+    <ellipse cx="1180" cy="190" rx="90" ry="40" fill="#c58bff" opacity=".28" filter="url(#blur)"/>
+    <path d="M1085 430 C1100 380 1100 330 1088 290 H1160 C1148 330 1148 380 1163 430Z" fill="#14115c"/>
+    <path d="M1175 430 C1190 380 1190 330 1178 290 H1250 C1238 330 1238 380 1253 430Z" fill="#14115c"/>
+    <g fill="#ff4d6d" filter="url(#glow)"><circle cx="1015" cy="300" r="2.5"/><circle cx="1015" cy="340" r="2.5"/></g>
+    <rect x="1010" y="270" width="8" height="160" fill="#14115c"/>
+    <!-- wind turbines -->
+    <use href="#turbine" x="1290" y="60" width="130" height="208" style="color:#6e7bff;--fill:#18145f" />
+    <use href="#turbine" x="1190" y="260" width="70" height="112" style="color:#6e7bff;--fill:#18145f"/>
+    <use href="#turbine" x="900" y="300" width="50" height="80" style="color:#6e7bff;--fill:#18145f"/>
+    <!-- foreground hill -->
+    <path d="M0 640 C260 580 460 640 700 600 S1100 560 1440 600 V800 H0Z" fill="#090733"/>
+    <!-- substation -->
+    <g stroke="#06051f" stroke-width="7" fill="none" stroke-linecap="round">
+      <path d="M1010 700 V500 M1090 700 V500 M1180 700 V500 M1270 700 V500 M1360 700 V500"/>
+      <path d="M1000 500 H1380 M1000 560 H1380 M1000 620 H1380"/>
+    </g>
+    <g fill="#0d0b3d" stroke="#2a2a9a" stroke-width="2"><rect x="1300" y="590" width="130" height="110" rx="4"/><rect x="1050" y="640" width="60" height="60" rx="4"/></g>
+    <g fill="#ffb02e" filter="url(#glow)"><circle cx="1010" cy="496" r="4"/><circle cx="1090" cy="496" r="4"/><circle cx="1180" cy="496" r="4"/><circle cx="1270" cy="496" r="4"/><circle cx="1360" cy="496" r="4"/><circle cx="1130" cy="640" r="3"/><circle cx="1230" cy="650" r="3"/><circle cx="1330" cy="600" r="3"/></g>
+    <!-- solar panel -->
+    <use href="#solar" x="1170" y="640" width="330" height="185" style="color:#7fb0ff;--fill:#1a3fd0"/>
+    <!-- cables (glow + bright core + flowing energy) -->
+    <g fill="none" stroke-linecap="round">
+      <path id="c1" d="M268 98 C420 200 540 80 720 190 S1000 140 1440 250" stroke="#2f8bff" stroke-width="7" opacity=".25" filter="url(#glow)"/>
+      <path d="M268 98 C420 200 540 80 720 190 S1000 140 1440 250" stroke="#58b6ff" stroke-width="2"/>
+      <path class="flow" d="M268 98 C420 200 540 80 720 190 S1000 140 1440 250" stroke="#ffffff" stroke-width="3"/>
+      <path d="M-8 98 C100 190 220 170 338 147 C440 120 480 150 600 260" stroke="#58b6ff" stroke-width="2"/>
+      <path class="flow f-slow" d="M-8 98 C100 190 220 170 338 147 C440 120 480 150 600 260" stroke="#ffffff" stroke-width="3"/>
+      <path d="M268 212 C430 330 560 190 740 300 S1020 260 1440 350" stroke="#7a62ff" stroke-width="2"/>
+      <path class="flow" d="M268 212 C430 330 560 190 740 300 S1020 260 1440 350" stroke="#c9b8ff" stroke-width="3"/>
+      <path d="M512 147 C620 120 700 190 860 250 S1100 230 1440 190" stroke="#3aa0ff" stroke-width="2"/>
+    </g>
+    <!-- pylons (dark silhouettes) -->
+    <g style="color:#060520">
+      <use href="#pylon" x="-20" y="-40" width="300" height="600"/>
+      <use href="#pylon" x="330" y="60" width="190" height="380"/>
+      <use href="#pylon" x="600" y="250" width="90" height="180"/>
+      <use href="#pylon" x="860" y="300" width="60" height="120"/>
+    </g>
+    <rect width="1440" height="800" fill="url(#shade)"/>
+    <rect y="560" width="1440" height="240" fill="url(#fade)"/>
+  </svg>
+
   <div class="container hero-grid">
     <div class="hero-text">
       <p class="hello">Hello, I'm</p>
-      <h1>Attah U Llah <span class="grad">Beigh</span></h1>
+      <h1>Attah U Llah <br><span class="grad">Beigh</span></h1>
       <p class="role">Electrical Engineering student, final year</p>
       <p class="lead">I work on power systems, transmission and distribution, renewable energy and industrial automation. I have trained inside a 132/33 kV grid station and completed two 6-week internships with J&amp;K Power Transmission Limited.</p>
       <div class="actions">
-        <a href="#projects" class="btn solid">See my projects</a>
+        <a href="#projects" class="btn solid">See my projects &rarr;</a>
         <a href="#contact" class="btn ghost">Contact me</a>
       </div>
-      <ul class="stats">
-        <li><b>132/33 kV</b><span>Grid station training</span></li>
-        <li><b>2 &times; 6 weeks</b><span>JKPTL internships</span></li>
-        <li><b>100 MVA</b><span>Substation studied</span></li>
-      </ul>
     </div>
     <div class="photo"><img src="Dp For Web.jpg.jpg" alt="Portrait of Attah U Llah Beigh"></div>
   </div>
+
+  <div class="container">
+    <ul class="stats">
+      <li><svg class="ico" width="30" height="44" viewBox="0 0 100 200"><use href="#pylon"/></svg><div><b>132/33 kV</b><span>Grid station training</span></div></li>
+      <li><svg class="ico" width="34" height="34"><use href="#icon-briefcase"/></svg><div><b>2 &times; 6 weeks</b><span>JKPTL internships</span></div></li>
+      <li><svg class="ico bolt" width="30" height="34"><use href="#icon-bolt"/></svg><div><b>100 MVA</b><span>Substation studied</span></div></li>
+    </ul>
+  </div>
 </section>
 
-<section id="about" class="section">
-  <div class="container split">
-    <h2>About me</h2>
-    <div>
-      <p class="big">I am a final-year Electrical Engineering student who learns best on real equipment: substations, control panels and live networks.</p>
-      <p>My main interests are power systems, transmission and distribution, electrical substations, renewable energy, PLC and industrial automation. I want to apply what I study to real systems and projects.</p>
-      <dl class="facts">
-        <div class="card"><dt>Field</dt><dd>Electrical Engineering</dd></div>
-        <div class="card"><dt>Specialization</dt><dd>Power and energy systems</dd></div>
-        <div class="card"><dt>Focus</dt><dd>Power systems and automation</dd></div>
-        <div class="card"><dt>Status</dt><dd>Final-year student</dd></div>
-      </dl>
-    </div>
+<!-- ABOUT -->
+<section id="about" class="section about">
+  <svg class="about-scene" viewBox="0 0 900 500" preserveAspectRatio="xMaxYMax slice" aria-hidden="true">
+    <defs>
+      <linearGradient id="water" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2c3cff"/><stop offset="1" stop-color="#0a0930"/></linearGradient>
+      <filter id="g2"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    </defs>
+    <path d="M0 330 C150 270 260 310 400 280 S700 230 900 270 V500 H0Z" fill="#0b0a3a"/>
+    <g fill="none" stroke-linecap="round">
+      <path d="M560 80 C640 170 720 120 780 150 S860 130 900 150" stroke="#3a8bff" stroke-width="2"/>
+      <path class="flow" d="M560 80 C640 170 720 120 780 150 S860 130 900 150" stroke="#fff" stroke-width="2.5"/>
+      <path d="M560 130 C650 220 720 170 790 200 S860 190 900 200" stroke="#7a62ff" stroke-width="2"/>
+    </g>
+    <g style="color:#05041a">
+      <use href="#pylon" x="520" y="60" width="130" height="260"/>
+      <use href="#pylon" x="740" y="40" width="150" height="300"/>
+      <use href="#pylon" x="680" y="180" width="70" height="140"/>
+    </g>
+    <rect x="360" y="330" width="330" height="40" fill="#0a0930"/>
+    <g fill="#9fd6ff" opacity=".9"><rect x="520" y="342" width="14" height="60"/><rect x="545" y="342" width="14" height="60"/><rect x="570" y="342" width="14" height="60"/></g>
+    <g fill="#ffb02e" filter="url(#g2)"><circle cx="380" cy="338" r="2.5"/><circle cx="420" cy="338" r="2.5"/><circle cx="460" cy="338" r="2.5"/><circle cx="500" cy="338" r="2.5"/><circle cx="620" cy="338" r="2.5"/><circle cx="660" cy="338" r="2.5"/></g>
+    <rect y="400" width="900" height="100" fill="url(#water)" opacity=".7"/>
+  </svg>
+  <div class="container about-wrap">
+    <p class="eyebrow">About me</p>
+    <h2 class="about-title">Electrical Engineering <span class="violet">Enthusiast</span></h2>
+    <p class="big">I am a final-year B.Tech Electrical Engineering student with a Diploma in Electrical Engineering. I learn best on real equipment: substations, control panels and live networks.</p>
+    <p>I am interested in power systems, transmission and distribution, electrical substations, renewable energy, PLC and industrial automation. I want to apply what I study to real systems and projects.</p>
+    <a href="#education" class="btn ghost more">More about me &rarr;</a>
+    <dl class="facts">
+      <div class="card"><dt>Field</dt><dd>Electrical Engineering</dd></div>
+      <div class="card"><dt>Specialization</dt><dd>Power and energy systems</dd></div>
+      <div class="card"><dt>Focus</dt><dd>Power systems and automation</dd></div>
+      <div class="card"><dt>Status</dt><dd>Final-year student</dd></div>
+    </dl>
   </div>
 </section>
 
@@ -204,7 +327,6 @@
   </div>
 </footer>
 
-<a class="fab" href="mailto:attahullahbeigh1357@gmail.com" aria-label="Send email">&#9993;</a>
 <script src="script.js"></script>
 </body>
 </html>
