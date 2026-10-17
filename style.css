@@ -120,111 +120,160 @@ footer{background:#060519;color:var(--muted);padding:22px 0;font-size:.9rem;bord
 }
 @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 
-/* ===== Animated Electrical Hero Background ===== */
 
-#home.hero {
-    position: relative;
-    isolation: isolate;
-    overflow: hidden;
-    background:
-        radial-gradient(
-            ellipse at 80% 25%,
-            rgba(105, 55, 255, 0.32),
-            transparent 48%
-        ),
-        linear-gradient(
-            135deg,
-            #090821 0%,
-            #11103d 52%,
-            #21105a 100%
-        );
+/* ===== FULL WEBSITE: ELECTRICAL ENERGY BACKGROUND ===== */
+
+html {
+    min-height: 100%;
+    background: #090821;
 }
 
-/* Glowing technical grid and transmission lines */
-#home.hero::before {
+body {
+    position: relative;
+    isolation: isolate;
+    min-height: 100vh;
+    background: transparent !important;
+}
+
+/* Fixed background stays behind the entire website */
+body::before {
     content: "";
-    position: absolute;
+    position: fixed;
     inset: 0;
     z-index: -1;
     pointer-events: none;
 
     background:
-        repeating-linear-gradient(
-            115deg,
-            transparent 0px,
-            transparent 68px,
-            rgba(74, 180, 255, 0.12) 69px,
-            transparent 71px,
-            transparent 135px
+        /* Purple glow around station areas */
+        radial-gradient(
+            ellipse at 82% 20%,
+            rgba(95, 48, 230, 0.24),
+            transparent 42%
         ),
+        radial-gradient(
+            ellipse at 12% 68%,
+            rgba(23, 112, 190, 0.17),
+            transparent 40%
+        ),
+
+        /* Transmission cables and electrical lines */
         repeating-linear-gradient(
-            0deg,
+            166deg,
             transparent 0px,
-            transparent 79px,
-            rgba(140, 95, 255, 0.10) 80px,
-            transparent 82px
+            transparent 105px,
+            rgba(76, 190, 255, 0.14) 106px,
+            transparent 108px,
+            transparent 170px
+        ),
+
+        /* Substation-style vertical busbars */
+        repeating-linear-gradient(
+            90deg,
+            transparent 0px,
+            transparent 119px,
+            rgba(142, 106, 255, 0.09) 120px,
+            transparent 122px,
+            transparent 205px
+        ),
+
+        /* Original dark blue-purple theme */
+        linear-gradient(
+            135deg,
+            #090821 0%,
+            #11103d 52%,
+            #180d3d 100%
         );
 
-    opacity: 0.8;
-    animation: electrical-grid 16s linear infinite;
+    background-size:
+        auto,
+        auto,
+        100% 100%,
+        100% 100%,
+        auto;
+
+    animation: grid-station-glow 18s ease-in-out infinite alternate;
 }
 
-/* Moving energy waves */
-#home.hero::after {
+/* Moving glowing electrical energy */
+body::after {
     content: "";
-    position: absolute;
-    inset: -40%;
+    position: fixed;
+    inset: -30%;
     z-index: -1;
     pointer-events: none;
 
     background:
         linear-gradient(
-            112deg,
-            transparent 43%,
-            rgba(62, 190, 255, 0.02) 46%,
-            rgba(62, 190, 255, 0.38) 47%,
-            rgba(135, 86, 255, 0.25) 48%,
-            transparent 50%
+            115deg,
+            transparent 42%,
+            rgba(49, 180, 255, 0.02) 46%,
+            rgba(49, 180, 255, 0.20) 47%,
+            rgba(128, 77, 255, 0.17) 48%,
+            transparent 51%
         ),
-        radial-gradient(
-            ellipse at 70% 40%,
-            rgba(103, 49, 255, 0.22),
-            transparent 42%
+        linear-gradient(
+            25deg,
+            transparent 45%,
+            rgba(85, 77, 255, 0.08) 48%,
+            transparent 51%
         );
 
-    animation: energy-flow 12s ease-in-out infinite alternate;
+    animation: power-flow 16s linear infinite alternate;
 }
 
-/* Keep your name, buttons and photo above the effects */
-#home.hero .hero-content {
+/* Keep all website content readable and above the background */
+body > * {
     position: relative;
     z-index: 1;
 }
 
-@keyframes electrical-grid {
-    from {
-        background-position: 0 0, 0 0;
+/* Keep hero section transparent so the full-page effect shows through */
+#home.hero {
+    background: transparent !important;
+    isolation: auto;
+    overflow: hidden;
+}
+
+/* Slow-moving substation glow */
+@keyframes grid-station-glow {
+    0% {
+        background-position:
+            0 0,
+            0 0,
+            0 0,
+            0 0,
+            0 0;
+        filter: brightness(0.88);
     }
-    to {
-        background-position: 135px 0, 0 160px;
+
+    100% {
+        background-position:
+            0 0,
+            0 0,
+            45px 15px,
+            20px 35px,
+            0 0;
+        filter: brightness(1.08);
     }
 }
 
-@keyframes energy-flow {
-    from {
-        transform: translateX(-5%) translateY(-2%);
-        opacity: 0.55;
+/* Flowing electrical lines */
+@keyframes power-flow {
+    0% {
+        transform: translate(-2%, -1%);
+        opacity: 0.45;
     }
-    to {
-        transform: translateX(5%) translateY(2%);
-        opacity: 1;
+
+    100% {
+        transform: translate(2%, 1%);
+        opacity: 0.9;
     }
 }
 
-/* Respect visitors who prefer reduced motion */
+/* Accessibility: reduce motion when requested */
 @media (prefers-reduced-motion: reduce) {
-    #home.hero::before,
-    #home.hero::after {
+    body::before,
+    body::after {
         animation: none;
     }
 }
