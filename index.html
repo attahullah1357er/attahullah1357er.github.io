@@ -3,15 +3,22 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title> Attah U Llah Beigh | Electrical Engineering Portfolio</title>
+<title>Attah U Llah Beigh | Electrical Engineering Portfolio</title>
 <meta name="description" content="Portfolio of Attah U Llah Beigh, final-year B.Tech Electrical Engineering student with experience in power systems, substations, renewable energy and PLC automation.">
 <meta name="google-site-verification" content="AX1bPegK20SlBSsNhf59HftJDLyADob2TUCViV4lNVI" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+<div class="banner" id="banner">
+  <span class="badge">New</span>
+  <span>Open to internships and entry-level roles in power systems and automation</span>
+  <a href="#contact">Contact me</a>
+  <button class="banner-close" id="bannerClose" aria-label="Close banner">&times;</button>
+</div>
 
 <header class="site-header">
   <div class="container bar">
@@ -23,7 +30,7 @@
       <a href="#experience">Experience</a>
       <a href="#skills">Skills</a>
       <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
+      <a href="#contact" class="nav-cta">Contact</a>
     </nav>
   </div>
 </header>
@@ -34,13 +41,18 @@
   <div class="container hero-grid">
     <div class="hero-text">
       <p class="hello">Hello, I'm</p>
-      <h1>ATTAH U LLAH BEIGH</h1>
+      <h1>Attah U Llah <span class="grad">Beigh</span></h1>
       <p class="role">Electrical Engineering student, final year</p>
-      <p class="lead">I work on power systems, transmission and distribution, renewable energy and industrial automation. I have trained inside a 132/33 kV grid station and completed  twice 6 week  internship with the J&amp;K power transmission limited.</p>
+      <p class="lead">I work on power systems, transmission and distribution, renewable energy and industrial automation. I have trained inside a 132/33 kV grid station and completed two 6-week internships with J&amp;K Power Transmission Limited.</p>
       <div class="actions">
         <a href="#projects" class="btn solid">See my projects</a>
         <a href="#contact" class="btn ghost">Contact me</a>
       </div>
+      <ul class="stats">
+        <li><b>132/33 kV</b><span>Grid station training</span></li>
+        <li><b>2 &times; 6 weeks</b><span>JKPTL internships</span></li>
+        <li><b>100 MVA</b><span>Substation studied</span></li>
+      </ul>
     </div>
     <div class="photo"><img src="Dp For Web.jpg.jpg" alt="Portrait of Attah U Llah Beigh"></div>
   </div>
@@ -53,23 +65,23 @@
       <p class="big">I am a final-year Electrical Engineering student who learns best on real equipment: substations, control panels and live networks.</p>
       <p>My main interests are power systems, transmission and distribution, electrical substations, renewable energy, PLC and industrial automation. I want to apply what I study to real systems and projects.</p>
       <dl class="facts">
-        <div><dt>Field</dt><dd>Electrical Engineering</dd></div>
-        <div><dt>Specialization</dt><dd>Power and energy systems</dd></div>
-        <div><dt>Focus</dt><dd>Power systems and automation</dd></div>
-        <div><dt>Status</dt><dd>Final-year student</dd></div>
+        <div class="card"><dt>Field</dt><dd>Electrical Engineering</dd></div>
+        <div class="card"><dt>Specialization</dt><dd>Power and energy systems</dd></div>
+        <div class="card"><dt>Focus</dt><dd>Power systems and automation</dd></div>
+        <div class="card"><dt>Status</dt><dd>Final-year student</dd></div>
       </dl>
     </div>
   </div>
 </section>
 
-<section id="education" class="section tint">
+<section id="education" class="section alt">
   <div class="container split">
     <h2>Education</h2>
     <ol class="timeline">
       <li>
         <span class="when">Currently pursuing</span>
         <h3>B.Tech in Electrical Engineering</h3>
-        <p class="where">Baba Farid College of Engineering and Technology, Bathinda. which is affilated with MRSPTU BATI PUNJAB</p>
+        <p class="where">Baba Farid College of Engineering and Technology, Bathinda (affiliated with MRSPTU, Bathinda, Punjab)</p>
         <p>Final-year studies in power systems, transmission and distribution, renewable energy and industrial applications.</p>
       </li>
       <li>
@@ -86,14 +98,16 @@
   <div class="container split">
     <h2>Experience</h2>
     <div class="jobs">
-            <article>
-        <h3>Industrial training in 2025</h3>
+      <article class="card">
+        <span class="when">2025</span>
+        <h3>Industrial training</h3>
         <p class="where">Grid Station Villgam, 132/33 kV, 100 MVA</p>
         <p>Six weeks on substation equipment, protection, control and power transmission.</p>
         <p class="chips"><span>132/33 kV</span><span>Protection</span><span>Transmission</span></p>
       </article>
-      <article>
-        <h3>Industrial training in 2026</h3>
+      <article class="card">
+        <span class="when">2026</span>
+        <h3>Industrial training</h3>
         <p class="where">Grid Station Villgam, 132/33 kV, 100 MVA</p>
         <p>Six weeks on substation equipment, protection, control and power transmission.</p>
         <p class="chips"><span>132/33 kV</span><span>Protection</span><span>Transmission</span></p>
@@ -102,16 +116,16 @@
   </div>
 </section>
 
-<section id="skills" class="section tint">
+<section id="skills" class="section alt">
   <div class="container split">
     <h2>Skills</h2>
     <ul class="skills">
-      <li><h3>Power systems</h3><p>Generation, transmission, distribution and grid concepts.</p></li>
-      <li><h3>Transmission and distribution</h3><p>Lines, substations, protection and distribution networks.</p></li>
-      <li><h3>Renewable energy</h3><p>Solar and wind energy systems.</p></li>
-      <li><h3>PLC and automation</h3><p>PLC basics, ladder logic and industrial automation.</p></li>
-      <li><h3>Electrical measurements</h3><p>Measuring instruments and instrumentation.</p></li>
-      <li><h3>Digital tools</h3><p>Microsoft Word, Excel, documentation and technical presentation.</p></li>
+      <li class="card"><h3>Power systems</h3><p>Generation, transmission, distribution and grid concepts.</p></li>
+      <li class="card"><h3>Transmission and distribution</h3><p>Lines, substations, protection and distribution networks.</p></li>
+      <li class="card"><h3>Renewable energy</h3><p>Solar and wind energy systems.</p></li>
+      <li class="card"><h3>PLC and automation</h3><p>PLC basics, ladder logic and industrial automation.</p></li>
+      <li class="card"><h3>Electrical measurements</h3><p>Measuring instruments and instrumentation.</p></li>
+      <li class="card"><h3>Digital tools</h3><p>Microsoft Word, Excel, documentation and technical presentation.</p></li>
     </ul>
   </div>
 </section>
@@ -119,69 +133,48 @@
 <section id="projects" class="section">
   <div class="container split">
     <h2>Projects</h2>
-    <div class="projects">
-      <article class="iot-project">
-
-  <h3>IoT Based Automatic Switch</h3>
-
-  <img src="smart-switch1.jpg.jpg"
-       alt="IoT Smart Switch Project"
-       class="project-image">
-
-  <img src="esp32-board.jpg.jpg"
-       alt="ESP32 Development Board"
-       class="project-image">
-
-  <img src="smart-switch-working.jpg.jpg"
-       alt="Smart Switch Working Setup"
-       class="project-image">
-
-  <p>
-    Designed and developed an IoT-based automatic switch
-    using ESP32 DevKit and a 5V single-channel relay module.
-    The system creates its own Wi-Fi hotspot and allows a
-    smartphone or laptop to control a connected load through
-    a web browser.
-  </p>
-
-  <p class="chips">
-    <span>ESP32</span>
-    <span>IoT</span>
-    <span>Wi-Fi</span>
-    <span>Web Server</span>
-    <span>Relay Module</span>
-  </p>
-
-  <a class="btn solid"
-     href="./minor%20project%207THsem-1.pdf"
-     target="_blank"
-     rel="noopener noreferrer">
-    View Project Report (PDF)
-  </a>
-
-</article>
-      <article>
-        <h3>Material elevator control system</h3>
-        <p>A material elevator driven by a DC motor, with a control panel and PLC-based automation.</p>
-        <p class="chips"><span>PLC</span><span>DC motor</span><span>Automation</span></p>
-      </article>
-      <article>
-        <h3>Grid station study</h3>
-        <p>Study of the operation and equipment of a 132/33 kV, 100 MVA grid station, from industrial training.</p>
-        <p class="chips"><span>Substation</span><span>Protection</span></p>
-      </article>
+    <div>
+      <div class="filters" role="tablist" aria-label="Filter projects">
+        <button class="pill active" data-filter="all">All projects</button>
+        <button class="pill" data-filter="iot">IoT</button>
+        <button class="pill" data-filter="automation">Automation</button>
+        <button class="pill" data-filter="power">Power systems</button>
+      </div>
+      <div class="projects">
+        <article class="card iot-project" data-cat="iot">
+          <h3>IoT Based Automatic Switch</h3>
+          <div class="gallery">
+            <img src="smart-switch1.jpg.jpg" alt="IoT Smart Switch Project" class="project-image">
+            <img src="esp32-board.jpg.jpg" alt="ESP32 Development Board" class="project-image">
+            <img src="smart-switch-working.jpg.jpg" alt="Smart Switch Working Setup" class="project-image">
+          </div>
+          <p>Designed and developed an IoT-based automatic switch using ESP32 DevKit and a 5V single-channel relay module. The system creates its own Wi-Fi hotspot and allows a smartphone or laptop to control a connected load through a web browser.</p>
+          <p class="chips"><span>ESP32</span><span>IoT</span><span>Wi-Fi</span><span>Web Server</span><span>Relay Module</span></p>
+          <a class="btn solid" href="./minor%20project%207THsem-1.pdf" target="_blank" rel="noopener noreferrer">View project report (PDF)</a>
+        </article>
+        <article class="card" data-cat="automation">
+          <h3>Material elevator control system</h3>
+          <p>A material elevator driven by a DC motor, with a control panel and PLC-based automation.</p>
+          <p class="chips"><span>PLC</span><span>DC motor</span><span>Automation</span></p>
+        </article>
+        <article class="card" data-cat="power">
+          <h3>Grid station study</h3>
+          <p>Study of the operation and equipment of a 132/33 kV, 100 MVA grid station, from industrial training.</p>
+          <p class="chips"><span>Substation</span><span>Protection</span></p>
+        </article>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="section tint">
+<section class="section alt">
   <div class="container split">
     <h2>Languages</h2>
     <ul class="langs">
-      <li>English <span>Professional</span></li>
-      <li>Hindi <span>Working</span></li>
-      <li>Urdu <span>Fluent</span></li>
-      <li>Kashmiri <span>Fluent</span></li>
+      <li class="card">English <span>Professional</span></li>
+      <li class="card">Hindi <span>Working</span></li>
+      <li class="card">Urdu <span>Fluent</span></li>
+      <li class="card">Kashmiri <span>Fluent</span></li>
     </ul>
   </div>
 </section>
@@ -197,16 +190,21 @@
     </p>
     <div class="actions">
       <a class="btn solid" href="mailto:attahullahbeigh1357@gmail.com">Send email</a>
-      <a class="btn solid" href="https://in.linkedin.com/in/attah-u-llah-beigh-b4bb571b0" target="_blank" rel="noopener">LinkedIn</a>
-      <a class="btn solid" href="https://github.com/attahullah1357er" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn ghost" href="https://in.linkedin.com/in/attah-u-llah-beigh-b4bb571b0" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn ghost" href="https://github.com/attahullah1357er" target="_blank" rel="noopener">GitHub</a>
     </div>
   </div>
 </section>
 
 <footer>
   <div class="container">
-    &copy; 2026 Attah U Llah Beigh.
+    &copy; <span id="current-year">2026</span> Attah U Llah Beigh.
     Never be so busy becoming successful that you forget how to be human.
     Every heart carries a story you may never know.
   </div>
 </footer>
+
+<a class="fab" href="mailto:attahullahbeigh1357@gmail.com" aria-label="Send email">&#9993;</a>
+<script src="script.js"></script>
+</body>
+</html>
