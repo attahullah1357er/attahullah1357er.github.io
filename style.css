@@ -119,3 +119,112 @@ footer{background:#060519;color:var(--muted);padding:22px 0;font-size:.9rem;bord
   .section{padding:72px 0}
 }
 @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+
+/* ===== Animated Electrical Hero Background ===== */
+
+#home.hero {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    background:
+        radial-gradient(
+            ellipse at 80% 25%,
+            rgba(105, 55, 255, 0.32),
+            transparent 48%
+        ),
+        linear-gradient(
+            135deg,
+            #090821 0%,
+            #11103d 52%,
+            #21105a 100%
+        );
+}
+
+/* Glowing technical grid and transmission lines */
+#home.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+
+    background:
+        repeating-linear-gradient(
+            115deg,
+            transparent 0px,
+            transparent 68px,
+            rgba(74, 180, 255, 0.12) 69px,
+            transparent 71px,
+            transparent 135px
+        ),
+        repeating-linear-gradient(
+            0deg,
+            transparent 0px,
+            transparent 79px,
+            rgba(140, 95, 255, 0.10) 80px,
+            transparent 82px
+        );
+
+    opacity: 0.8;
+    animation: electrical-grid 16s linear infinite;
+}
+
+/* Moving energy waves */
+#home.hero::after {
+    content: "";
+    position: absolute;
+    inset: -40%;
+    z-index: -1;
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            112deg,
+            transparent 43%,
+            rgba(62, 190, 255, 0.02) 46%,
+            rgba(62, 190, 255, 0.38) 47%,
+            rgba(135, 86, 255, 0.25) 48%,
+            transparent 50%
+        ),
+        radial-gradient(
+            ellipse at 70% 40%,
+            rgba(103, 49, 255, 0.22),
+            transparent 42%
+        );
+
+    animation: energy-flow 12s ease-in-out infinite alternate;
+}
+
+/* Keep your name, buttons and photo above the effects */
+#home.hero .hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes electrical-grid {
+    from {
+        background-position: 0 0, 0 0;
+    }
+    to {
+        background-position: 135px 0, 0 160px;
+    }
+}
+
+@keyframes energy-flow {
+    from {
+        transform: translateX(-5%) translateY(-2%);
+        opacity: 0.55;
+    }
+    to {
+        transform: translateX(5%) translateY(2%);
+        opacity: 1;
+    }
+}
+
+/* Respect visitors who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    #home.hero::before,
+    #home.hero::after {
+        animation: none;
+    }
+}
