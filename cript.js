@@ -3,23 +3,36 @@
 // Mobile navigation
 const menuToggle = document.querySelector(".menu-toggle");
 const navLinks = document.querySelector(".nav-links");
-
 if (menuToggle && navLinks) {
     menuToggle.addEventListener("click", () => {
         const open = navLinks.classList.toggle("active");
         menuToggle.setAttribute("aria-expanded", open);
     });
 }
-
 document.querySelectorAll(".nav-links a").forEach(link => {
-    link.addEventListener("click", () => {
-        if (navLinks) navLinks.classList.remove("active");
-    });
+    link.addEventListener("click", () => { if (navLinks) navLinks.classList.remove("active"); });
 });
+
+// Announcement banner
+const banner = document.getElementById("banner");
+const bannerClose = document.getElementById("bannerClose");
+if (banner && bannerClose) bannerClose.addEventListener("click", () => banner.classList.add("hide"));
 
 // Current year in footer
 const yearElement = document.getElementById("current-year");
 if (yearElement) yearElement.textContent = new Date().getFullYear();
+
+// Project filter pills
+const pills = document.querySelectorAll(".pill");
+const cards = document.querySelectorAll(".projects article");
+pills.forEach(pill => {
+    pill.addEventListener("click", () => {
+        pills.forEach(p => p.classList.remove("active"));
+        pill.classList.add("active");
+        const f = pill.dataset.filter;
+        cards.forEach(c => { c.hidden = !(f === "all" || c.dataset.cat === f); });
+    });
+});
 
 // Smooth scrolling
 document.querySelectorAll('a[href^="#"]').forEach(link => {
@@ -32,11 +45,11 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
     });
 });
 
-// Three-phase AC waveform in the hero (phases 120 degrees apart)
+// Three-phase AC waveform in the hero (phases 120 degrees apart), with glow
 const canvas = document.getElementById("waves");
 if (canvas) {
     const ctx = canvas.getContext("2d");
-    const colors = ["#f5a300", "#4fd1e8", "#ffffff"];
+    const colors = ["#ffc83d", "#4fd1e8", "#8b6bff"];
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     let t = 0;
 
@@ -57,11 +70,14 @@ if (canvas) {
                 x === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
             }
             ctx.strokeStyle = c;
-            ctx.globalAlpha = 0.75;
+            ctx.shadowColor = c;
+            ctx.shadowBlur = 14;
+            ctx.globalAlpha = 0.85;
             ctx.lineWidth = 2;
             ctx.stroke();
         });
         ctx.globalAlpha = 1;
+        ctx.shadowBlur = 0;
         if (!reduce) {
             t += 0.03;
             requestAnimationFrame(draw);
